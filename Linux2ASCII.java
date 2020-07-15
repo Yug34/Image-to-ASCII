@@ -6,7 +6,7 @@ import java.io.*;
 import javax.imageio.ImageIO;
 //import javax.swing.JFrame;
 
-public class BetterImg2ASCII
+public class Img2ASCII
 {
     public static void main(String[] args)
     {
@@ -25,7 +25,10 @@ public class BetterImg2ASCII
             //File input = new File("/home/verti/Desktop/nature.jpg");
 
             try {
-                File myObj = new File("/home/verti/Desktop/ASCII.txt");
+                //windows path
+                File myObj = new File("C:\\Users\\Yug\\Desktop\\ASCII.txt");
+                //linux path
+                //File myObj = new File("/home/verti/Desktop/ASCII.txt");
                 if (myObj.createNewFile()) {
                     System.out.println("File created: " + myObj.getName());
                 } else {
@@ -36,14 +39,17 @@ public class BetterImg2ASCII
                 e.printStackTrace();
             }
 
-            FileWriter writer = new FileWriter("/home/verti/Desktop/ASCII.txt");
+            //windows path
+            FileWriter writer = new FileWriter("C:\\Users\\Yug\\Desktop\\ASCII.txt");
+            //linux path
+            //FileWriter writer = new FileWriter("/home/verti/Desktop/ASCII.txt");
 
             image = ImageIO.read(input);
             width = image.getWidth();
             height = image.getHeight();
 
-            int charheight = 12;
-            int charwidth = 8;
+            int charheight = 24;//12
+            int charwidth = 8;//8
 
             for (int i = 0; i < height; i+=charheight)
             {
@@ -58,7 +64,7 @@ public class BetterImg2ASCII
 
                     for (int k = 0; k < charheight; k++)
                     {
-                        for (int l = 0; l < 8; l++)
+                        for (int l = 0; l < charwidth; l++)
                         {
                             c[k][l] = new Color(image.getRGB(j + l, i + k));
 
@@ -84,6 +90,6 @@ public class BetterImg2ASCII
             writer.close();
             System.out.println("Finished");
         }
-        catch (Exception e) {}
+        catch (Exception ignored) {}
     }
 }
