@@ -3,9 +3,13 @@
 Java Program to convert Images to ASCII art.
 
 Dependencies:
+
       import java.awt.*;
+      
       import java.awt.image.BufferedImage;
+      
       import java.io.*;
+      
       import javax.imageio.ImageIO;
 
 ![Place](https://github.com/Yug34/Image-to-ASCII/blob/master/placeimg.png)
