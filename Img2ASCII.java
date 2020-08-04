@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
-//import javax.swing.JFrame;
 
 public class Img2ASCII
 {
